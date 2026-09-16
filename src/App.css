@@ -1,0 +1,36 @@
+/* ================================
+   Seamless Gradient Background
+================================ */
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse at 55% 55%,
+    #F2621A 0%,
+    #E84D10 25%,
+    #D63008 50%,
+    #B51F02 75%,
+    #9A1000 100%
+  );
+}
+
+/* 1. Chrome, Safari, and newer Edge / Opera */
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* 2. Firefox & IE/Edge */
+html,
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and older Edge */
+}

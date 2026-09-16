@@ -1,0 +1,268 @@
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.about {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.about-content {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =========================================
+   WHO AM I
+========================================= */
+
+.about-title {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  display: flex;
+  gap: 0.35em;
+  font-family: "Lilita One", sans-serif;
+  font-size: clamp(6rem, 18vw, 17rem);
+  font-weight: 400;
+  line-height: 0.8;
+  color: #000;
+  white-space: nowrap;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about-title span {
+  display: inline-block;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* =========================
+   HANGING VIDEO
+========================= */
+
+.about-image {
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  transform: translateX(-50%);
+  width: 380px;
+  height: 520px;
+  overflow: hidden;
+  border: 8px solid #000;
+  background: #000;
+  box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  transform-origin: 50% 0%;
+  animation: photoSwing 4s ease-in-out infinite;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.about-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@keyframes photoSwing {
+  0% {
+    rotate: -3deg;
+  }
+  50% {
+    rotate: 3deg;
+  }
+  100% {
+    rotate: -3deg;
+  }
+}
+
+/* =========================
+   BOTTOM RECTANGULAR STRIP
+========================= */
+
+.about-strip {
+  position: absolute;
+  left: 50%;
+  bottom: 3%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 55px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  color: #000;
+  font-family: "Agdasima", sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+  z-index: 5;
+  opacity: 0;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  will-change: opacity, transform;
+}
+
+.about-strip:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* =========================
+   ABOUT GLASS BOX
+========================= */
+
+.about-box {
+  position: absolute;
+  left: 50%;
+  bottom: 3%;
+  transform: translateX(-50%);
+  width: min(720px, 80%);
+  min-height: 330px;
+  padding: 40px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 6;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.about-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.about-box h3 {
+  margin: 0;
+  font-family: "Lilita One", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  color: #000;
+}
+
+.about-close-btn {
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-family: "Agdasima", sans-serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.about-close-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.about-box p {
+  margin: 0 0 16px;
+  font-family: "Agdasima", sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  color: #000;
+}
+
+.about-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   RESPONSIVE & SCREEN FITS
+========================================= */
+
+@media (max-width: 900px) {
+  .about-title {
+    font-size: clamp(5rem, 20vw, 11rem);
+  }
+
+  .about-image {
+    width: 65vw;
+    height: 85vw;
+    max-height: 520px;
+  }
+
+  .about-strip {
+    width: 80%;
+  }
+
+  .about-box {
+    width: 80%;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-title {
+    top: 12%;
+    font-size: clamp(4rem, 22vw, 7rem);
+  }
+
+  .about-image {
+    top: 30%;
+    width: 75vw;
+    height: 105vw;
+    max-height: 520px;
+  }
+
+  .about-strip {
+    width: 85%;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+
+  .about-box {
+    width: 85%;
+    min-height: 280px;
+    padding: 22px;
+  }
+
+  .about-box h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-height: 750px) {
+  .about-box {
+    max-height: 52vh;
+    overflow-y: auto;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-image {
+    animation: none;
+  }
+}

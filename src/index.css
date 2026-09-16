@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Lilita+One&display=swap');
+/* ================================
+   Global Reset
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ================================
+   Root Variables
+================================ */
+
+:root {
+  --cream: #f1eee7;
+  --red: #c8102e;
+  --black: #111111;
+  --gray: #3a3a38;
+}
+
+
+/* ================================
+   HTML & Body
+================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  
+  color: var(--black);
+
+  font-family: "Agdasima", sans-serif;
+
+  overflow-x: hidden;
+
+ 
+}
+
+/* headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lilita One", sans-serif;
+}
+
+/* ================================
+   Links
+================================ */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ================================
+   Images
+================================ */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* ================================
+   Buttons
+================================ */
+
+button {
+  font: inherit;
+}
+
+
+/* ================================
+   Selection
+================================ */
+
+::selection {
+  background: var(--red);
+  color: var(--cream);
+}

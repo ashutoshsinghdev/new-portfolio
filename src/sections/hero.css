@@ -1,0 +1,245 @@
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+
+  
+}
+
+
+/* =========================================
+   NAME
+========================================= */
+
+.hero-name {
+  position: absolute;
+
+  left: 50%;
+  top: 38%;
+
+  transform: translate(-50%, -50%);
+
+  margin: 0;
+
+  font-family: "Lilita One", sans-serif;
+  font-size: clamp(120px, 30vw, 300px);
+
+  line-height: 0.8;
+  white-space: nowrap;
+
+  color: white;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   SOFTWARE ENGINEER
+========================================= */
+
+.hero-role {
+  position: absolute;
+
+  left: 50%;
+  top: 66%;
+
+  transform: translateX(-50%);
+
+  width: 85%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0;
+
+  font-family: "Agdasima", sans-serif;
+  font-size: clamp(24px, 3vw, 48px);
+  font-weight: 400;
+
+  letter-spacing: 0.35em;
+
+  color: white;
+
+  z-index: 3;
+
+  pointer-events: none;
+}
+
+.hero-role span {
+  display: block;
+}
+
+
+/* =========================================
+   VIDEO
+========================================= */
+
+.hero-video {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  transform: translateX(-50%);
+
+  width: min(90vw, 1200px);
+
+  z-index: 4;
+
+  pointer-events: none;
+}
+
+.hero-video video {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
+.hero-socials {
+  position: absolute;
+
+  left: 25px;
+  bottom: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 12px;
+
+  z-index: 5;
+}
+
+.hero-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  color: black;
+
+  font-size: 25px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.hero-socials a:hover {
+  transform: scale(1.2);
+
+  color: white;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .hero-name {
+    top: 40%;
+
+    font-size: clamp(90px, 16vw, 170px);
+  }
+
+  .hero-role {
+    top: 65%;
+
+    width: 80%;
+
+    font-size: clamp(22px, 3.5vw, 36px);
+  }
+
+  .hero-video {
+    width: min(65vw, 650px);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: 100svh;
+  }
+
+
+  .hero-name {
+    top: 38%;
+
+    font-size: clamp(70px, 19vw, 120px);
+
+    letter-spacing: -0.02em;
+  }
+
+
+  .hero-role {
+    top: 63%;
+
+    width: 88%;
+
+    font-size: clamp(18px, 5vw, 28px);
+
+    letter-spacing: 0.2em;
+  }
+
+
+  .hero-video {
+    width: 90vw;
+
+    bottom: 0;
+  }
+
+
+  .hero-socials {
+    left: 15px;
+    bottom: 18px;
+
+    gap: 8px;
+  }
+
+
+  .hero-socials a {
+    width: 26px;
+    height: 26px;
+
+    font-size: 17px;
+  }
+
+}

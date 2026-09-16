@@ -1,0 +1,292 @@
+.contact {
+  position: relative;
+  width: 100%;
+  min-height: 110vh;
+  overflow: hidden;
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.contact-left {
+  position: absolute;
+  left: 2%;
+  top: 16%;
+  z-index: 2;
+}
+
+/* =========================
+   MAIN HEADING
+========================= */
+
+.contact-title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Lilita One", sans-serif;
+  font-size: clamp(5rem, 9vw, 9rem);
+  font-weight: 400;
+  line-height: 0.9;
+  color: #000;
+  white-space: nowrap;
+}
+
+.contact-title span {
+  display: block;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* MAKE */
+.contact-title span:nth-child(1) {
+  color: #fff;
+}
+
+/* SOMETHING */
+.contact-title span:nth-child(2) {
+  color: #fff;
+}
+
+/* TOGETHER */
+.contact-title span:nth-child(3) {
+  margin-top: 35px;
+  color: #000;
+  font-size: clamp(7rem, 13vw, 13rem);
+  line-height: 0.8;
+}
+
+/* =========================
+   SOCIAL SECTION
+========================= */
+
+.contact-socials {
+  margin-top: 45px;
+  padding-left: 5px;
+}
+
+.contact-socials p {
+  margin: 0 0 20px;
+  font-family: "Agdasima", sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+  color: #fff;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.social-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.8rem;
+  opacity: 0;
+  will-change: opacity, transform;
+  transition: transform 0.2s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+}
+
+/* Resume */
+
+.resume-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 155px;
+  height: 32px;
+  background: #fff;
+  color: #d94d16 !important;
+  font-family: "Agdasima", sans-serif;
+  font-size: 1.3rem !important;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+/* =========================
+   FORM BOX
+========================= */
+
+.contact-form-box {
+  position: absolute;
+  top: 18%;
+  right: 8%;
+  width: 37%;
+  min-height: 500px;
+  padding: 40px 45px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 3;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* Form heading */
+
+.contact-form-box h3 {
+  margin: 0 0 40px;
+  text-align: center;
+  font-family: "Lilita One", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.15em;
+  color: #fff;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.contact-form-box form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Inputs */
+
+.contact-form-box input,
+.contact-form-box textarea {
+  width: 80%;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 30px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-family: "Agdasima", sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.contact-form-box input {
+  height: 48px;
+  padding: 0 20px;
+}
+
+.contact-form-box textarea {
+  height: 130px;
+  padding: 20px;
+  resize: none;
+  border-radius: 25px;
+}
+
+/* Placeholder */
+
+.contact-form-box input::placeholder,
+.contact-form-box textarea::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Focus */
+
+.contact-form-box input:focus,
+.contact-form-box textarea:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #fff;
+}
+
+/* =========================
+   SEND BUTTON
+========================= */
+
+.contact-form-box button {
+  padding: 9px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Agdasima", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-form-box button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .contact-left {
+    position: relative;
+    left: auto;
+    top: auto;
+    padding: 15vh 5vw 0;
+  }
+
+  .contact-title {
+    font-size: clamp(4rem, 11vw, 7rem);
+  }
+
+  .contact-title span:nth-child(3) {
+    font-size: clamp(4.5rem, 12vw, 8rem);
+  }
+
+  .contact-form-box {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 75%;
+    margin: 8vh auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-left {
+    padding-top: 14vh;
+  }
+
+  .contact-title {
+    font-size: clamp(3rem, 15vw, 5rem);
+    white-space: normal;
+  }
+
+  .contact-title span:nth-child(3) {
+    font-size: clamp(3.5rem, 17vw, 6rem);
+  }
+
+  .contact-form-box {
+    width: 85%;
+    padding: 25px 15px;
+  }
+
+  .contact-form-box input,
+  .contact-form-box textarea {
+    width: 90%;
+  }
+
+  .social-links {
+    gap: 15px;
+  }
+
+  .resume-link {
+    width: 120px;
+  }
+}

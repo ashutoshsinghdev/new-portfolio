@@ -1,0 +1,327 @@
+/* =========================================
+   PROJECTS SECTION
+========================================= */
+
+.projects {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* =========================================
+   PROJECT HEADING
+========================================= */
+
+.projects-heading {
+  position: absolute;
+  left: 4%;
+  top: 12%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.projects-heading h2 {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Lilita One", sans-serif;
+  font-size: clamp(4rem, 6vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.85;
+  color: #000;
+}
+
+.projects-heading h2 span {
+  align-self: center;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.projects-heading h2 .made {
+  color: #fff;
+}
+
+/* =========================================
+   PROJECT CARD BASE
+========================================= */
+
+.project-card {
+  position: absolute;
+  width: 58%;
+  min-height: 175px;
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #000;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 3;
+  will-change: transform, opacity, top, left, width, min-height;
+
+  /* Smooth bidirectional transitions for opening AND closing */
+  transition:
+    top 0.55s cubic-bezier(0.25, 1, 0.5, 1),
+    left 0.55s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.55s cubic-bezier(0.25, 1, 0.5, 1),
+    width 0.55s cubic-bezier(0.25, 1, 0.5, 1),
+    min-height 0.55s cubic-bezier(0.25, 1, 0.5, 1),
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.4s ease;
+}
+
+/* =========================================
+   HOVER EFFECT (DISABLED WHEN SELECTED)
+========================================= */
+
+.project-card:not(.selected):hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 12px 38px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  transform: translateY(-6px);
+}
+
+.project-card:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 5px;
+}
+
+/* =========================================
+   CARD DEFAULT POSITIONS
+   (All use left so interpolation to left: 50% is fluid)
+========================================= */
+
+.project-one {
+  top: 24%;
+  left: 35%;
+}
+
+.project-two {
+  top: 49%;
+  left: 4%;
+}
+
+.project-three {
+  top: 74%;
+  left: 35%;
+}
+
+/* =========================================
+   PROJECT IMAGE & CONTENT
+========================================= */
+
+.project-image {
+  width: 125px;
+  height: 125px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1), height 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.project-info {
+  flex: 1;
+  min-width: 0;
+  padding: 0 25px;
+}
+
+.project-info h3 {
+  margin: 0;
+  font-family: "Lilita One", sans-serif;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  transition: font-size 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-info p {
+  margin: 8px 0 0;
+  font-family: "Agdasima", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  transition: font-size 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-description {
+  display: block;
+  margin-top: 18px;
+  font-family: "Agdasima", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  animation: fadeInDesc 0.4s ease forwards;
+}
+
+@keyframes fadeInDesc {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   SELECTED STATE (MODAL EXPANSION)
+========================================= */
+
+.project-card.selected {
+  top: 50% !important;
+  left: 50% !important;
+  width: min(850px, 80%);
+  min-height: 430px;
+  transform: translate(-50%, -50%) !important;
+  z-index: 20;
+  cursor: default;
+  opacity: 1 !important;
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.project-card.selected .project-image {
+  width: 190px;
+  height: 190px;
+}
+
+.project-card.selected .project-info h3 {
+  font-size: clamp(2rem, 4vw, 4rem);
+}
+
+.project-card.selected .project-info p {
+  font-size: 1.2rem;
+}
+
+/* =========================================
+   FADE OUT UNSELECTED CARDS
+========================================= */
+
+.project-selected .project-card:not(.selected) {
+  opacity: 0 !important;
+  pointer-events: none;
+  transform: scale(0.92);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .projects {
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .projects-heading {
+    position: relative;
+    top: auto;
+    left: auto;
+    padding-top: 15vh;
+    text-align: center;
+  }
+
+  .projects-heading h2 {
+    align-items: center;
+  }
+
+  .project-card {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    width: 85%;
+    min-height: 175px;
+    margin: 40px auto;
+  }
+
+  .project-one {
+    margin-top: 80px;
+  }
+
+  .project-card.selected {
+    position: fixed;
+    top: 50% !important;
+    left: 50% !important;
+    width: 80%;
+    min-height: 400px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-heading h2 {
+    font-size: clamp(4rem, 18vw, 6rem);
+  }
+
+  .project-card {
+    width: 88%;
+    min-height: 145px;
+    padding: 15px;
+  }
+
+  .project-image {
+    width: 85px;
+    height: 85px;
+  }
+
+  .project-info {
+    padding: 0 10px;
+  }
+
+  .project-info h3 {
+    font-size: 1.25rem;
+  }
+
+  .project-info p {
+    font-size: 0.8rem;
+  }
+
+  .project-description {
+    font-size: 1.1rem;
+  }
+
+  .project-card.selected {
+    width: 88%;
+    min-height: 360px;
+    padding: 25px 18px;
+  }
+
+  .project-card.selected .project-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .project-card.selected .project-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .project-card.selected .project-info p {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,148 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1665 944"
+  width="1665"
+  height="944"
+>
+  <defs>
+    <!-- Orange background gradient -->
+    <radialGradient id="orangeGradient" cx="50%" cy="48%" r="75%">
+      <stop offset="0%" stop-color="#ff9a18"/>
+      <stop offset="45%" stop-color="#f87508"/>
+      <stop offset="100%" stop-color="#c93608"/>
+    </radialGradient>
+
+    <!-- Fine paper-like texture -->
+    <filter id="texture" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.75"
+        numOctaves="4"
+        seed="18"
+        result="noise"
+      />
+
+      <feColorMatrix
+        in="noise"
+        type="saturate"
+        values="0"
+        result="grayNoise"
+      />
+
+      <feComponentTransfer in="grayNoise" result="softNoise">
+        <feFuncA type="table" tableValues="0 0.18"/>
+      </feComponentTransfer>
+
+      <feBlend
+        in="SourceGraphic"
+        in2="softNoise"
+        mode="multiply"
+      />
+    </filter>
+
+    <!-- Small crosshair symbol -->
+    <g id="crosshair" stroke="#191919" stroke-width="2.2">
+      <path d="M0 -7 V7 M-7 0 H7"/>
+    </g>
+
+    <!-- Small vertical graphic -->
+    <g id="verticalMarks" fill="#171717">
+      <rect x="0" y="0" width="19" height="10"/>
+      <rect x="0" y="15" width="39" height="10"/>
+      <rect x="0" y="30" width="29" height="10"/>
+      <rect x="0" y="45" width="19" height="10"/>
+      <rect x="0" y="60" width="39" height="10"/>
+    </g>
+
+    <!-- Diagonal warning stripes -->
+    <g id="stripe">
+      <path d="M0 0 H34 L0 64 H-34 Z" fill="#171717"/>
+    </g>
+  </defs>
+
+  <!-- Main background -->
+  <rect
+    width="1665"
+    height="944"
+    fill="url(#orangeGradient)"
+    filter="url(#texture)"
+  />
+
+  <!-- Subtle darker edge shading -->
+  <rect
+    x="0"
+    y="0"
+    width="1665"
+    height="944"
+    fill="none"
+    stroke="#a82d09"
+    stroke-width="35"
+    opacity="0.22"
+  />
+
+  <!-- Upper-left crosshair grid -->
+  <g transform="translate(136 101)">
+    <use href="#crosshair"/>
+    <use href="#crosshair" x="55"/>
+    <use href="#crosshair" x="110"/>
+
+    <use href="#crosshair" y="47"/>
+    <use href="#crosshair" x="55" y="47"/>
+    <use href="#crosshair" x="110" y="47"/>
+
+    <use href="#crosshair" y="94"/>
+    <use href="#crosshair" x="55" y="94"/>
+    <use href="#crosshair" x="110" y="94"/>
+  </g>
+
+  <!-- Upper-right diagonal stripe block -->
+  <g transform="translate(1224 133)">
+    <use href="#stripe"/>
+    <use href="#stripe" x="54"/>
+    <use href="#stripe" x="108"/>
+    <use href="#stripe" x="162"/>
+    <use href="#stripe" x="216"/>
+    <use href="#stripe" x="270"/>
+    <use href="#stripe" x="324"/>
+    <use href="#stripe" x="378"/>
+  </g>
+
+  <!-- Right-side vertical marks -->
+  <g transform="translate(1582 426)">
+    <use href="#verticalMarks"/>
+  </g>
+
+  <!-- Lower-right pale diamond -->
+  <path
+    d="M1505 754
+       L1534 785
+       L1505 816
+       L1476 785 Z"
+    fill="#f5b4a5"
+  />
+
+  <!-- Lower-right crosshair -->
+  <g transform="translate(1549 835)" stroke="#171717" stroke-width="1.6">
+    <path d="M0 -20 V20 M-20 0 H20"/>
+    <path d="M0 -8 V8 M-8 0 H8"/>
+  </g>
+
+  <!-- Lower-right corner framing lines -->
+  <g
+    fill="none"
+    stroke="#171717"
+    stroke-width="2"
+  >
+    <path d="M1552 888 H1602 V839"/>
+    <path d="M1602 888 V904"/>
+    <path d="M1552 904 H1602"/>
+  </g>
+
+  <!-- Small corner dot -->
+  <circle
+    cx="1551"
+    cy="817"
+    r="2"
+    fill="#171717"
+  />
+</svg>
